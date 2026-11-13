@@ -86,6 +86,19 @@ Include the token in the request header:
 
 `Authorization: Bearer YOUR_TOKEN`
 
+### Health Check
+
+GET `/api/health`
+
+Returns the server health status.
+
+Example response:
+
+{
+  "status": "OK",
+  "message": "Server is healthy"
+}
+
 
 ## Developer
 Febin U
