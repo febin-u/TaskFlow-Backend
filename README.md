@@ -1,104 +1,104 @@
-# TaskFlow – Backend
+# TaskFlow --- Backend API
 
-Backend API for the TaskFlow task management application.
+The Express and MongoDB backend for **TaskFlow**, a personal
+productivity and task management application.
 
-## Technologies
-- Node.js
-- Express.js
-- MongoDB
-- Mongoose
-- JavaScript
+## Live services
 
-## Project Structure
-- config/
-- controllers/
-- middleware/
-- models/
-- routes/
-- validator/
+-   **Backend API:** https://taskflow-backend-g7s2.onrender.com
+-   **Frontend application:**
+    https://taskflow-frontend-r402.onrender.com
+
+A free Render instance may take a little time to wake after inactivity.
 
 ## Features
-- REST API architecture
-- Database integration
-- Request handling and middleware
-- Task management functionality
 
-## Setup
-1. Clone the repository.
-2. Run `npm install`.
-3. Configure your environment variables in `.env`.
-4. Run the application using `npm start` or the script defined in package.json.
+-   User registration and login
+-   Password hashing with bcryptjs
+-   JWT-based authentication
+-   Protected task-management routes
+-   Create, read, update, and delete tasks
+-   MongoDB persistence with Mongoose
+-   Request validation and middleware
+-   Health-check/root endpoint
 
-## Environment Variables
+## Technology stack
 
-Create a `.env` file in the backend root directory:
+Node.js, Express, MongoDB, Mongoose, JSON Web Token (JWT), bcryptjs,
+express-validator, and dotenv.
 
+## Project structure
+
+-   `config/` --- database configuration
+-   `controllers/` --- request handlers
+-   `middleware/` --- authentication and middleware
+-   `models/` --- database models
+-   `routes/` --- API routes
+-   `validator/` --- request validation
+
+## Run locally
+
+``` bash
+git clone https://github.com/febin-u/TaskFlow-Backend.git
+cd TaskFlow-Backend
+npm install
+```
+
+Create a `.env` file in the project root:
+
+``` env
 PORT=5001
-
 MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_long_random_secret
+```
 
-JWT_SECRET=your_secret_key
+Start the server:
 
-## Installation
+``` bash
+npm start
+```
 
-1. Clone the repository:
+For development with automatic restarts:
 
-   git clone https://github.com/febin-u/TaskFlow-Backend.git
+``` bash
+npm run dev
+```
 
-2. Navigate into the project:
-
-   cd TaskFlow-Backend
-
-3. Install dependencies:
-
-   npm install
-
-4. Configure your .env file.
-
-5. Start the server:
-
-   npm start
-
-## API Endpoints
+## API endpoints
 
 ### Authentication
 
-| Method | Endpoint | Description |
-|---|---|---|
-| POST | `/api/auth/register` | Register a new user |
-| POST | `/api/auth/login` | Login user |
+  Method   Endpoint               Description
+  -------- ---------------------- ---------------------
+  POST     `/api/auth/register`   Register a new user
+  POST     `/api/auth/login`      Log in
 
-### Task Management
+### Tasks
 
-| Method | Endpoint | Description |
-|---|---|---|
-| POST | `/api/tasks` | Create a task |
-| GET | `/api/tasks` | Get all tasks |
-| GET | `/api/tasks/:id` | Get a task by ID |
-| PUT | `/api/tasks/:id` | Update a task |
-| DELETE | `/api/tasks/:id` | Delete a task |
+  Method   Endpoint           Description
+  -------- ------------------ ------------------------------------
+  GET      `/api/tasks`       Get the authenticated user's tasks
+  POST     `/api/tasks`       Create a task
+  GET      `/api/tasks/:id`   Get a task by ID
+  PUT      `/api/tasks/:id`   Update a task
+  DELETE   `/api/tasks/:id`   Delete a task
 
-### Authentication
+Task routes require a JWT in the request header:
 
-Protected task endpoints require a JWT token.
+``` http
+Authorization: Bearer YOUR_TOKEN
+```
 
-Include the token in the request header:
+## Related repository
 
-`Authorization: Bearer YOUR_TOKEN`
+[TaskFlow Frontend](https://github.com/febin-u/TaskFlow-Frontend)
 
-### Health Check
+## Security
 
-GET `/api/health`
-
-Returns the server health status.
-
-Example response:
-
-{
-  "status": "OK",
-  "message": "Server is healthy"
-}
-
+Never commit `.env` files or share MongoDB credentials, JWT secrets, or
+access tokens. Configure private environment variables in your
+deployment dashboard.
 
 ## Developer
-Febin U
+
+**Febin U**
