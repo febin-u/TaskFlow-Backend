@@ -1,15 +1,15 @@
+
 {
   "name": "taskflow-backend",
   "version": "1.0.0",
-  "description": "",
+  "description": "Backend API for TaskFlow",
   "main": "index.js",
   "scripts": {
-      "start": "node index.js",
-      "dev": "nodemon index.js"
-}
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Febin U",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
