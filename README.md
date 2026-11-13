@@ -59,5 +59,33 @@ JWT_SECRET=your_secret_key
 
    npm start
 
+## API Endpoints
+
+### Authentication
+
+| Method | Endpoint | Description |
+|---|---|---|
+| POST | `/api/auth/register` | Register a new user |
+| POST | `/api/auth/login` | Login user |
+
+### Task Management
+
+| Method | Endpoint | Description |
+|---|---|---|
+| POST | `/api/tasks` | Create a task |
+| GET | `/api/tasks` | Get all tasks |
+| GET | `/api/tasks/:id` | Get a task by ID |
+| PUT | `/api/tasks/:id` | Update a task |
+| DELETE | `/api/tasks/:id` | Delete a task |
+
+### Authentication
+
+Protected task endpoints require a JWT token.
+
+Include the token in the request header:
+
+`Authorization: Bearer YOUR_TOKEN`
+
+
 ## Developer
 Febin U
