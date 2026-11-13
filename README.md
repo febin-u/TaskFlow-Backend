@@ -29,5 +29,33 @@ Backend API for the TaskFlow task management application.
 3. Configure your environment variables in `.env`.
 4. Run the application using `npm start` or the script defined in package.json.
 
+## Environment Variables
+
+Create a `.env` file in the backend root directory:
+
+PORT=5001
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_secret_key
+
+## Installation
+
+1. Clone the repository:
+
+   git clone https://github.com/febin-u/TaskFlow-Backend.git
+
+2. Navigate into the project:
+
+   cd TaskFlow-Backend
+
+3. Install dependencies:
+
+   npm install
+
+4. Configure your .env file.
+
+5. Start the server:
+
+   npm start
+
 ## Developer
 Febin U
